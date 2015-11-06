@@ -14,8 +14,3 @@
 Route::get('/', function () {
     return view('login');
 });
-
-Route::get('users', function () {
-    return View::make('users');
-});
-
