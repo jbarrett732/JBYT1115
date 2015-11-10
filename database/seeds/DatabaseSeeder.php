@@ -30,12 +30,14 @@ class GroupsTableSeeder extends Seeder
     {
 	DB::table('groups')->insert([
 	    [ 
-		'name' => 'adminUser',   
+		'name' => 'admin',   
+                'users' => 'adminUser',
 		'created_at' => \Carbon\Carbon::now()->toDateTimeString(),   
 		'updated_at' => \Carbon\Carbon::now()->toDateTimeString()   
 	    ],
 	    [ 
-		'name' => 'regularUser', 
+		'name' => 'regular', 
+                'users' => 'regularUser',
 		'created_at' => \Carbon\Carbon::now()->toDateTimeString(),   
 		'updated_at' => \Carbon\Carbon::now()->toDateTimeString()   
 	    ]
@@ -50,13 +52,13 @@ class UsersTableSeeder extends Seeder
 	DB::table('users')->insert([
 	    [
 		'name' => 'adminUser',
-		'password' => 'supersecret1',
+		'password' => password_hash('supersecret1', PASSWORD_DEFAULT),
 		'created_at' => \Carbon\Carbon::now()->toDateTimeString(),   
 		'updated_at' => \Carbon\Carbon::now()->toDateTimeString()   
     	    ],
 	    [
 		'name' => 'regularUser',
-		'password' => 'secret1',
+		'password' => password_hash('secret1', PASSWORD_DEFAULT),
 		'created_at' => \Carbon\Carbon::now()->toDateTimeString(),   
 		'updated_at' => \Carbon\Carbon::now()->toDateTimeString()   
 	    ]
