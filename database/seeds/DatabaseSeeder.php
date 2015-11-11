@@ -53,12 +53,14 @@ class UsersTableSeeder extends Seeder
 	    [
 		'name' => 'adminUser',
 		'password' => password_hash('supersecret1', PASSWORD_DEFAULT),
+                'remember_token' => 'none',
 		'created_at' => \Carbon\Carbon::now()->toDateTimeString(),   
 		'updated_at' => \Carbon\Carbon::now()->toDateTimeString()   
     	    ],
 	    [
 		'name' => 'regularUser',
 		'password' => password_hash('secret1', PASSWORD_DEFAULT),
+                'remember_token' => 'none',
 		'created_at' => \Carbon\Carbon::now()->toDateTimeString(),   
 		'updated_at' => \Carbon\Carbon::now()->toDateTimeString()   
 	    ]

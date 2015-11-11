@@ -1,0 +1,82 @@
+            html, body {
+                height: 100%;
+            }
+            body {
+                background-color: #434343;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                display: table;
+                font-weight: 100;
+                font-family: 'Lato';
+                color: #2ACAFF;
+                text-align: center;
+                display: inline-block; 
+            }
+            .user_title {
+                font-size: 36px;
+                margin: 10px;
+            }
+            .user_info {
+                font-size: 18px;
+                margin: 10px;
+            }
+            textarea { 
+                border-radius: 25px;
+                border: 3px solid #2ACAFF;
+                height: 200px;
+                width: 400px;
+                padding: 15px;
+            }
+            form {
+                text-align: center;
+            }
+            input[name=rank] {
+                border-radius:    15px;
+                border: 3px solid #2ACAFF;
+                height: 25px;
+                width: 50px;
+                padding: 5px;
+            }
+            input[name=domain] {
+                border-radius:    15px;
+                border: 3px solid #2ACAFF;
+                height: 25px;
+                width: 360px;
+                padding: 5px;
+            }
+            input[type=submit] {
+                background-color: #939393;
+                border-radius:    15px;
+                border: 3px solid #2ACAFF;
+                height: 40px;
+                width: 445px;
+                font-size: 18px;
+            }
+            input[value=Add], input[value=Back], input[value=Logout] {
+                background-color: #939393;
+                border-radius:    10px;
+                border: 2px solid #2ACAFF;
+                height: 30px;
+                width: 100px;
+                font-size: 18px;
+            }
+            table, th, td {
+                background-color: #2ACAFF;
+                border: 1px solid black;
+                text-align: left;
+                color: #000000;
+            }
+            .col1 {
+                width: 50px;
+                background-color: #434343;
+                color: #2ACAFF;
+            }
+            .col2 {
+                width: 500px;
+                background-color: #434343;
+                color: #2ACAFF;
+            }
+
+
+

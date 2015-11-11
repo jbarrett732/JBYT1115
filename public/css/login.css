@@ -1,0 +1,50 @@
+            html, body {
+                height: 100%;
+            }
+            body {
+                background-color: #434343;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                display: table;
+                font-weight: 100;
+                font-family: 'Lato';
+            }
+            .container {
+                text-align: center;
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .content {
+                background-color: #007BA4;
+                border-radius:    25px;
+                border: 3px solid #2ACAFF;
+                height: 200px;
+                width: 300px;
+                text-align: center;
+                display: inline-block;
+            }
+            .error {
+                color: #FF0000;
+                margin: 0px;
+                font-family: 'Times New Roman';
+                background-color: #000000;
+                border: 3px solid #939393;
+            }
+            .login_title {
+                font-size: 36px;
+                margin: 10px;
+            }
+            .login_input {
+                width: 75%;
+                height: 18px;
+                margin: 10px;
+                border-radius: 5px;
+                border: 2px solid #000000;
+            }
+            .login_submit {
+                float: right;
+                height: 26px;
+                margin-right: 12%;
+                margin-top: 10px;
+            }

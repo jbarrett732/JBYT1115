@@ -1,35 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>User Home</title>
+        <title>Domain Table</title>
+
         <meta name="csrf-token" content="{{ csrf_token() }}" />
+
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <link rel="stylesheet" href="{{ URL::asset('css/johns.css') }}" />
     </head>
     <body>
-        <div>
-            <div class="user_title">Welcome To The User Home Page!</div>
+        <div class="topBorder">
+            <div class="user_title">Here Is Your Table!</div>
+        </div>
             <div>
-                <?php 
-                    echo Form::open(array('url'=>'/auth/logout')); 
-                    echo Form::submit('Logout'); 
+                <?php
+                    echo Form::open(array('url'=>'/auth/logout'));
+                    echo Form::submit('Logout');
                     echo Form::close();
                 ?>
             </div>
-        </div>
-        <div>
-	    <div class="user_info">Enter Domain Names Below to Determine Their Alexa Rank</div>
-          
-            <div>
-                <?php echo Form::open(array('url'=>'/generateTable/makeUserTable')); echo Form::textarea('domain_list'); ?>
-            </div>
-            <div>
-                <?php echo Form::submit('Create Table'); echo Form::close(); ?>
-            </div>
-        </div>
-
-        <div class="user_title">Top Alexa Rankings</div>
         <div>
             <table id="rankTable" align="center">
                 <tr><td class="col1"><b>Rank</b></td><td class="col2"><b>Domain</b></td></tr>
@@ -37,7 +27,7 @@
             <script>
                 $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
                 $.ajax({
-                    url: "/generateTable/getTopTable",
+                    url: "/generateTable/getUserTable",
                     type:"GET",
                     data: {'_token': $('meta[name=csrf-token]').attr('content')},
                     success:function(data1){

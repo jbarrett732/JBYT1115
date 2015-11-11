@@ -16,24 +16,34 @@ Route::get('/', function () {
 });
 
 //authentication routes
-Route::post('/auth/login', 'Auth\JohnsAuthController@authenticate');
+Route::post('/auth/login',     'Auth\JohnsAuthController@authenticate');
+Route::post('/auth/logout',    'Auth\JohnsAuthController@logout');
 
 Route::get('/loginFailed', function () {
     return view('loginFailed');
 });
 
 //logged in user views
-Route::get('/userview', function () {
+Route::get('/userview', ['middleware' => 'auth', function () {
     return view('userview');
-});
+}]);
 
-Route::get('/domainTable', function () {
+Route::get('/domainTable', ['middleware' => 'auth', function () {
     return view('domainTable');
-});
+}]);
 
-Route::post('/generateTable', 'GenerateTable@table');
+//data resources
+Route::get ('/generateTable/getTopTable',   'GenerateTable@getTopTable'  );
+
+Route::post('/generateTable/adminAdd',      'GenerateTable@adminAdd'     );
+
+Route::post('/generateTable/makeUserTable', 'GenerateTable@makeUserTable');
+Route::get ('/generateTable/getUserTable',  'GenerateTable@getUserTable' );
 
 //logged in admin view
-Route::get('/adminview', function () {
+Route::get('/adminview',  ['middleware' => 'auth', function () {
     return view('adminview');
-});
+}]);
+Route::post('/addview',    ['middleware' => 'auth', function () {
+    return view('addview');
+}]);

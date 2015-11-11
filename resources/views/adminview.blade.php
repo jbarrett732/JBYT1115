@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>User Home</title>
+        <title>Admin Home</title>
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -9,11 +9,14 @@
     </head>
     <body>
         <div>
-            <div class="user_title">Welcome To The User Home Page!</div>
+            <div class="user_title">Welcome To The Admin Home Page!</div>
             <div>
                 <?php 
                     echo Form::open(array('url'=>'/auth/logout')); 
                     echo Form::submit('Logout'); 
+                    echo Form::close();
+                    echo Form::open(array('url'=>'/addview')); 
+                    echo Form::submit('Add'); 
                     echo Form::close();
                 ?>
             </div>

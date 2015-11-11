@@ -20,12 +20,12 @@ class JohnsAuthController extends Controller
         if (Auth::attempt(['name' => $username, 'password' => $password])) {
             // Authentication passed...
             $db_group = \DB::table('groups')->where('users',$username)->first();
-            if('admin' === $db_group->name)
-                // User belongs to admin group
-                return redirect()->intended('adminview');
-            else if('regular' === $db_group->name)
+            if('regular' === $db_group->name)
                 // User belongs to regular group
                 return redirect()->intended('userview');
+            else if('admin' === $db_group->name)
+                // User belongs to admin group
+                return redirect()->intended('adminview');
             else 
                 //must belong to a known group, so failed...
                 return redirect()->intended('loginFailed');
@@ -34,5 +34,10 @@ class JohnsAuthController extends Controller
             // Authentication failed...
             return redirect()->intended('loginFailed');
         }
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect()->intended('/');
     }
 }
